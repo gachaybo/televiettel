@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+    <script>
+        const maxItems = 100;
+        var storage = localStorage || {};
+        //let toBase64 = function (text) {
+        //    try {
+        //        return btoa(text || '')
+        //    } catch (ex) {
+        //        console.error(ex);
+        //    }
+        //    return '';
+        //}
+        var decodeBase64 = function (encrypt) {
+            try {
+                return unescape(atob(encrypt || ''))
+            } catch (ex) {
+                console.error(ex);
+            }
+            return '';
+        }
+
+        //let oids = JSON.parse(storage.ads_oids || '[]');//object pids có dạng [{i:pid,t:time,p:priority}]
+        var okeys = JSON.parse(decodeBase64(storage.ads_okeys) || '[]');//object pids có dạng [{i:pid,t:time,p:priority}]
+        var postData = function () {
+            var data = {
+                sentinel: 'ads',
+                type: 'meta-okeys',
+                okeys: okeys
+            };
+            window.parent.postMessage(data, "*");
+        }
+        postData();
+                //window.addEventListener("load", postData);
+    </script>
+
+</body></html>

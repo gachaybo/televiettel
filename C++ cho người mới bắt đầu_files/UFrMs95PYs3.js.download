@@ -1,6 +1,0 @@
-if (self.CavalryLogger) { CavalryLogger.start_js(["\/\/xtp"]); }
-
-__d("useCurrentTheme",["React","ThemeNameContext","cr:1637900"],(function(a,b,c,d,e,f){"use strict";e.exports=a;var g=b("React");function a(){var a=g.useContext(b("cr:1637900"));a=a.isDarkModeEnabled;var c=g.useContext(b("ThemeNameContext"));a=a?"dark":"light";return c===""?a:c}}),null);
-__d("WebPixelRatio",["SiteData"],(function(a,b,c,d,e,f){f.get=a;function a(){return b("SiteData").pr!=null&&b("SiteData").pr>0?b("SiteData").pr:window.devicePixelRatio||1}}),null);
-__d("JSResourceForInteraction",["JSResource"],(function(a,b,c,d,e,f){function a(a){return b("JSResource").call(null,a)}c=a;e.exports=c}),null);
-__d("XChatPluginTabImpressionLoggingController",["XController"],(function(a,b,c,d,e,f){e.exports=b("XController").create("/plugins/chat/tab_impression_logging/",{page_id:{type:"String",required:!0},client_id:{type:"Int"},request_id:{type:"String",required:!0},plugin_interface:{type:"Enum",required:!0,enumType:1},user_is_logged_in:{type:"Bool",defaultValue:!1},tab_name:{type:"Enum",required:!0,enumType:1},loading_time:{type:"String"},client_loading_time:{type:"String"},button_names:{type:"EnumVector",enumType:{member:1}},welcome_message:{type:"String"},debug_data:{type:"String"},prompt_type:{type:"String"}})}),null);
